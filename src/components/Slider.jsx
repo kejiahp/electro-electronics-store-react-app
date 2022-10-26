@@ -4,12 +4,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Navigation, Autoplay } from 'swiper';
+import { Navigation, Autoplay, A11y, Scrollbar, Pagination } from 'swiper';
 
 const Slider = ({children}) => {
   return (
         <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation, Autoplay, Pagination, Scrollbar, A11y]}
             rewind={true}
             autoplay={{delay: 3000, disableOnInteraction: true}}
             navigation={true}
