@@ -24,8 +24,8 @@ export const Header = styled.div`
     }
 `
 export const HeaderLinks = styled.a`
-        color: #2B2D42;
-        font-weight: 500;
+        color: #8d99ae;
+        font-weight: 800;
 `
 
 const Navheaders = () => {

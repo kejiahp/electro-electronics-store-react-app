@@ -12,7 +12,7 @@ const Slider = ({children}) => {
             modules={[Navigation, Autoplay, Pagination, Scrollbar, A11y]}
             rewind={true}
             autoplay={{delay: 3000, disableOnInteraction: true}}
-            navigation={true}
+            // navigation={true}
             slidesPerView={4}
             spaceBetween={20}
             breakpoints={
