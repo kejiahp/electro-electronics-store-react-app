@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { announcementBg } from '../utils/colors'
 import { faCcVisa, faCcPaypal, faCcMastercard, faCcDiscover, faCcAmex } from '@fortawesome/free-brands-svg-icons'
+import {mobile} from '../Responsive'
 
 const Container = styled.div`
     ${announcementBg}
@@ -12,10 +13,23 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    ${
+        mobile({
+            padding: "30px",
+        })
+    }
 `
 const CardsContainer = styled.div`
     display: flex;
     margin-bottom: 20px;
+
+    ${
+        mobile({
+            display: 'grid',
+            gridTemplateColumns: "auto auto auto"
+        })
+    }
 `
 const Card = styled.a`
     margin: 5px;
@@ -57,7 +71,7 @@ const FooterCopyright = () => {
             </Card>
         </CardsContainer>
         <CopyRight>
-            <Statement>Copyright ©2022 All rights reserved | This website is made with <FontAwesomeIcon icon={faHeart} />  by <CreatorLink href='#' target={"_blank"}>kejiah</CreatorLink> </Statement>
+            <Statement>Copyright ©2022 All rights reserved | This website is made with <FontAwesomeIcon icon={faHeart} />  by <CreatorLink href='https://github.com/kejiahp' target={"_blank"}>kejiah</CreatorLink> </Statement>
         </CopyRight>
     </Container>
   )

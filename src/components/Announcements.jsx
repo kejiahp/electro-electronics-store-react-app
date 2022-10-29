@@ -3,24 +3,72 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import { announcementBg, announcementRed } from "../utils/colors"
+import { mobile, tablet, Laptop} from '../Responsive'
 
 const Container = styled.div`
   ${announcementBg}
   display: flex;
   padding: 10px 100px;
+  align-items: center;
   color: white;
   font-size: 13px;
+
+  ${mobile(
+    {
+      flexDirection: "column",
+      padding: "10px",
+      justifyContent: "space-evenly",
+      alignItems: "flex-start",
+    }
+  )
+  }
+
+  ${
+    tablet({
+      padding: "20px",
+      flexDirection: "column",
+      alignItems: "flex-start",
+    })
+  }
+
+${
+    Laptop({
+      padding: "20px"
+    })
+  }
 `
 const Right = styled.div`
-  flex: 1;
+  flex: 2;
   display: flex;
+
+  ${
+    mobile({
+      flexDirection: "column"
+    })
+  }
+  ${
+    tablet({
+      marginBottom: "20px",
+    })
+  }
 `
 const Left = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+
+  ${
+    mobile({
+      flexDirection: "column"
+    })
+  }
 `
-const PhoneNumber = styled.div`margin-right:10px;`
+const PhoneNumber = styled.div`
+  margin-right:10px;
+  ${mobile({
+    margin: "10px"
+  })}
+`
 const Number = styled.span`
   margin:5px;
   cursor: pointer;
@@ -28,7 +76,12 @@ const Number = styled.span`
     ${announcementRed}
   }`
 
-const Email = styled.div`margin-right:10px;`
+const Email = styled.div`
+  margin-right:10px;
+  ${mobile({
+    margin: "10px"
+  })}
+  `
 const Mail = styled.a`
   margin:5px;
   text-decoration:none;
@@ -38,7 +91,12 @@ const Mail = styled.a`
     ${announcementRed}
   }`
 
-const Location = styled.div`margin-right:10px;`
+const Location = styled.div`
+  margin-right:10px;
+  ${mobile({
+    margin: "10px"
+  })}
+  `
 const Locate = styled.span`
   margin:5px;
   cursor: pointer;
@@ -46,7 +104,12 @@ const Locate = styled.span`
     ${announcementRed}
   }`
 
-const Currency = styled.div`margin-right:10px;`
+const Currency = styled.div`
+  margin-right:10px;
+  ${mobile({
+    margin: "10px"
+  })}
+  `
 const Label = styled.span`
   margin:5px;
   cursor: pointer;
@@ -54,7 +117,12 @@ const Label = styled.span`
     ${announcementRed}
   }`
 
-const Bag = styled.div`margin-right:10px;`
+const Bag = styled.div`
+margin-right:10px;
+${mobile({
+    margin: "10px"
+  })}
+`
 
 const Announcements = () => {
   return (

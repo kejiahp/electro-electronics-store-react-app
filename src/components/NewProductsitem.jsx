@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import { navBg } from '../utils/colors'
+import { Desktop, K4, Laptop, mobile, tablet } from '../Responsive'
 
 const AddToCartSlider = styled.div`
   ${navBg}
@@ -28,7 +29,35 @@ const Container = styled.div`
     background-color: white;
 `
 const SliderHolder = styled.div`
-    height: 500px;
+    /* height: calc(100% + 50px); */
+    padding: 30px 0 80px 0;
+
+    /* ${
+      mobile({
+        height:"calc(500px + 150px)"
+      })
+    }
+    ${
+      tablet({
+        height: "calc(500px + 150px)",
+      })
+    }
+    ${
+      Laptop({
+        height: "450px",
+      })
+    }
+    ${
+      Desktop({
+        height: "calc(500px + 50px)"
+      })
+    }
+    ${
+      K4({
+        height:"calc(500px + 300px)"
+      })
+    } */
+
 
 
     &:hover ${Container}{
@@ -82,6 +111,7 @@ const ProductRating = styled.div`
   &::after{
     content: "";
     position: absolute;
+    z-index: -3;
     top: 50%;
     left: 0;
     right: 0;

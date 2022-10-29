@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import {mobile,tablet} from '../Responsive'
 
 const Container = styled.div`
     padding: 30px 100px;
@@ -12,12 +13,21 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    ${
+        mobile({
+            padding: "10px",
+            justifyContent: "center",
+        })
+    }
 `
 const Header = styled.h1`
     font-weight: 300;
     font-size: 24px;
     color: #2B2D42;
     margin-bottom: 30px;
+    text-align: center;
+    
 `
 const HeaderSpan = styled.span`
     font-weight: 800;
@@ -35,6 +45,17 @@ const NewLetterForm = styled.input`
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     border: 1px solid #E4E7Ed;
+
+    ${
+        mobile({
+            width: "calc(100% - 200px)",
+        })
+    }
+    ${
+        tablet({
+            width: "calc(100% - 200px)",
+        })
+    }
 `
 const NewLetterFormSubmit = styled.button`
     display: flex;

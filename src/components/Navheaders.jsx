@@ -1,13 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Laptop, mobile, tablet } from '../Responsive'
 import { announcementRedBg } from '../utils/colors'
 
-export const Container = styled.div`
+const Container = styled.div`
     padding: 20px 100px;
     display: flex;
     border-bottom: 2px solid #ddd;
+
+    ${
+        mobile({
+            display: "none"
+        })
+    }
+    ${
+        tablet({
+            display: "none",
+        })
+    }
+    ${
+        Laptop({
+            padding: "20px"
+        })
+    }
 `
-export const Header = styled.div`
+const Header = styled.div`
     margin-right: 20px;
     cursor: pointer;
     &::after{
@@ -23,9 +40,14 @@ export const Header = styled.div`
         width: 100%;
     }
 `
-export const HeaderLinks = styled.a`
-        color: #8d99ae;
-        font-weight: 800;
+const HeaderLinks = styled.a`
+        color: #2B2D42;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+        color: #d10024;
+    }
 `
 
 const Navheaders = () => {

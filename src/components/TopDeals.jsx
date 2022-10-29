@@ -1,15 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../Responsive'
+
 
 const Container = styled.div`
     background-color: #e4e7ed;
-    height: 50vh;
     padding: 60px 0px;
     background-image: url("https://preview.colorlib.com/theme/electro/img/xhotdeal.png.pagespeed.ic.523j9s2i8G.webp");
     background-repeat: no-repeat;
     background-position: center;
+
+    ${
+        mobile({
+            height: "fit-content"
+        })
+    }
 `
 const SubContainer = styled.div`
+    margin: 60px 0px;
     padding: 0px 100px;
     height: 100%;
     display: flex;

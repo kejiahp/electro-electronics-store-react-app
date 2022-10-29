@@ -3,16 +3,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
 import { navBg } from '../utils/colors'
+import {mobile, tablet, Laptop} from '../Responsive'
 
 const Container = styled.div`
     ${navBg}
     display: flex;
     padding: 50px 100px;
     color:#B9BABC;
+
+    ${
+        mobile({
+            padding: "50px 10px",
+            flexDirection: "column"
+        })
+    }
+    ${
+        tablet({
+            // flexWrap: "wrap",
+            display: "grid",
+            gridTemplateColumns: "50% 50%",
+            padding: "20px",
+        })
+    }
+    ${
+        Laptop({
+            padding: "40px 20px 20px 20px",
+        })
+    }
 `
 const AboutContainer = styled.div`
     flex: 1;
     margin-right: 20px;
+    ${
+        mobile({
+            marginBottom: "30px",
+        })
+    }
 `
 const OthersHeader = styled.h1`
     color: white;
@@ -27,6 +53,11 @@ const AboutDesc = styled.p`
 const OthersContainer = styled.div`
     flex: 1;
     margin-right: 20px;
+    ${
+        mobile({
+            marginBottom: "30px",
+        })
+    }
 `
 const AboutList = styled.ul`
     list-style: none;
@@ -44,6 +75,12 @@ const AboutDetail = styled.a`
     font-weight: 500;
     transition: 0.2s all;
     cursor: pointer;
+
+    ${
+        Laptop({
+            marginLeft: "5px",
+        })
+    }
 
     &:hover{
         color: #d10024;

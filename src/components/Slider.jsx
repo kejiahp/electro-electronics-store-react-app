@@ -27,7 +27,7 @@ const Slider = ({children}) => {
                     spaceBetween: 20
                     },
                     // when window width is >= 480px
-                    600: {
+                    550: {
                     slidesPerView: 2,
                     spaceBetween: 20
                     },
@@ -36,7 +36,7 @@ const Slider = ({children}) => {
                         slidesPerView: 3,
                         spaceBetween: 20
                     },
-                    1024: {
+                    1150: {
                     slidesPerView: 4,
                     spaceBetween: 30
                     }
