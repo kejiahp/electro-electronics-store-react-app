@@ -218,6 +218,7 @@ const HamburgerOpen = styled.div`
     background-color:#15161D;
     width: 250px;
     height: 100vh;
+    overflow-y: scroll;
     position: fixed;
     transform: translateX(${props=>props.isopen ? "0%" : "-100%"});
     left: 0;
