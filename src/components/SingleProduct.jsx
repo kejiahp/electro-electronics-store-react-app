@@ -139,7 +139,7 @@ const QuantityText = styled.div`
     font-size: 18px;
     font-weight: 600;
 `
-const QuantityInput = styled.input`
+const QuantityInput = styled.p`
     width: 50px;
     border: none;
     outline: none;
@@ -202,6 +202,7 @@ const ShareIcon = styled.div`
 
 const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1)
+    
     const handleQuantity = (type) => {
         if(type === "desc"){
             quantity > 1 && setQuantity(quantity - 1)
@@ -244,7 +245,7 @@ const SingleProduct = () => {
                     <QuantityText>
                         Qty
                     </QuantityText>
-                    <QuantityInput type={"text"}  pattern={'[0-9]*'} value={quantity} onChange={(e) =>setQuantity(e.target.value)}/>
+                    <QuantityInput>{quantity}</QuantityInput>
                     <QuantityCounter>
                         <QuantityArrowUp onClick={() => handleQuantity("asc")}>
                             <FontAwesomeIcon icon={faChevronUp}/>
