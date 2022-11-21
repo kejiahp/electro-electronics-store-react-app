@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { announcementBg, announcementRed } from "../utils/colors"
 import { mobile, tablet, Laptop} from '../Responsive'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   ${announcementBg}
@@ -149,7 +150,7 @@ const Announcements = () => {
         </Currency>
         <Bag>
           <FontAwesomeIcon color='#d10024' icon={faBagShopping}/>
-          <Label>My Account</Label>
+          <Link style={{textDecoration: "none",color:"white"}} to="/my-account"><Label>My Account</Label></Link>
         </Bag>
       </Left>
     </Container>

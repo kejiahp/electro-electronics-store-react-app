@@ -2,6 +2,7 @@ import { faBars, faHeart, faXmark, faShoppingCart } from '@fortawesome/free-soli
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Desktop, Laptop, mobile, tablet } from '../Responsive'
 import { announcementRed, announcementRedBg, navBg } from '../utils/colors'
@@ -394,11 +395,11 @@ const Navbar = () => {
         </HamburgerOpen>
 
         <Logo>
-            <LogoText>Electro<LogoDot>.</LogoDot></LogoText>
+            <LogoText><Link style={{textDecoration: "none", color: "#fff"}} to='/'>Electro</Link><LogoDot>.</LogoDot></LogoText>
         </Logo>
         <SearchBar>
-            <SearchCategories>
-                <CategoryOptions selected disabled>All Categories</CategoryOptions>
+            <SearchCategories defaultValue=''>
+                <CategoryOptions value='' disabled>All Categories</CategoryOptions>
                 <CategoryOptions>category1</CategoryOptions>
                 <CategoryOptions>category2</CategoryOptions>
                 <CategoryOptions>category3</CategoryOptions>
@@ -407,11 +408,13 @@ const Navbar = () => {
             <SearchSubmit>Search</SearchSubmit>
         </SearchBar>
         <Personal>
+            <Link to='/cart/wishlist' style={{textDecoration: "none", color: "#fff"}}>
             <WishList>
                 <FontAwesomeIcon icon={faHeart} />
                 <WishListCounter>0</WishListCounter>
                 <WishListText>Your Wishlist</WishListText>
             </WishList>
+                </Link>
             <Cart>
                 <FontAwesomeIcon onClick={() => openCart(!cartIsOpen)} icon={faShoppingCart} />
                 <CartCounter>0</CartCounter>
@@ -419,8 +422,8 @@ const Navbar = () => {
                 <CartDropDown open={cartIsOpen}>
                     <CartList>
                         {
-                            [1,2,3,4,5,6].map(item=>(
-                                <CartProduct>
+                            [1,2,3,4,5,6].map((item,i)=>(
+                                <CartProduct key={i}>
                             <CartProductImage src='https://preview.colorlib.com/theme/electro/img/xshop03.png.pagespeed.ic.7lsQL1UJA9.webp'/>
                             <CartProductDetails>
                                 <CartProductName>
@@ -442,7 +445,11 @@ const Navbar = () => {
                         <SubtotalCount>SUBTOTAL: $2940.00</SubtotalCount>
                     </CartDetails>
                     <CartDropBtns>
-                        <ViewCartBtn>View Cart</ViewCartBtn>
+                        <Link style={{textDecoration: "none", color: "#fff"}} to="/cart">
+                            <ViewCartBtn>
+                                View Cart
+                            </ViewCartBtn>
+                        </Link>
                         <CheckOutBtn>Checkout</CheckOutBtn>
                     </CartDropBtns>
                 </CartDropDown>

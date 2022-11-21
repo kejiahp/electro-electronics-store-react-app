@@ -5,10 +5,10 @@ import FooterCopyright from '../components/FooterCopyright'
 import Navbar from '../components/Navbar'
 import Navheaders from '../components/Navheaders'
 import NewsLetter from '../components/NewsLetter'
-import CartPage from '../components/CartPage'
 import styled from 'styled-components'
 import { mobile, tablet, Laptop } from '../Responsive'
-import WishListPage from '../components/WishListPage'
+import { Link, Outlet } from 'react-router-dom'
+
 
 const Container = styled.div`
     padding: 50px 100px;
@@ -126,15 +126,14 @@ const Cart = () => {
             <ItemHolder>
                 <ContinueBtn>Continue Shopping</ContinueBtn>
                 <Tabs>
-                <CartTab>Your Cart(4)</CartTab>
-                <WishListTab>Your WishList(0)</WishListTab>
+                <CartTab><Link to='/cart' style={{color: "black"}}>Your Cart(4)</Link></CartTab>
+                <WishListTab><Link to='/cart/wishlist' style={{color: "black"}}>Your WishList(0)</Link></WishListTab>
                 </Tabs>
                 <CheckOutBtn>Checkout Now</CheckOutBtn>
             </ItemHolder>
         </Container>
 
-        <CartPage />
-        {/* <WishListPage /> */}
+        <Outlet />
         <NewsLetter />
         <Footer />
         <FooterCopyright />
